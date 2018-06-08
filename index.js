@@ -1,9 +1,5 @@
-//creating an object of JS
-var rect = {
-  //using arrow fucntion here for defining the function
-  perimeter: (x,y) => (2*(x+y)),
-  area : (x,y) => (x*y)
-};
+//creating an object of JS DONE, now using the node module for our var rect
+var rect = require('./rectangle');
 
 function solverect(a,b)
 {
