@@ -4,12 +4,18 @@ var rect = require('./rectangle');
 function solverect(a,b)
 {
   console.log("solving for rectangle with length ="+a+"and breadth ="+b);
-  if(a<=0 || b<=0 )
-  console.log("please enter the non zero values");
-  else {
-    console.log("the area of the rectangle is "+ rect.area(a,b));
-    console.log("the perimeter of the rectangle is "+ rect.perimeter(a,b));
-  }
+  rect(a,b,(err,rectangle)=>
+  {
+    if(err)
+    {
+      console.log("Error: ",err.message);
+    }
+    else {
+      console.log("the area of the rectangle with dimensoions "+ a+"and b = "+b+"is"+ rectangle.area());
+        console.log("the perimeter of the rectangle with dimensoions "+ a+"and b = "+b+"is"+ rectangle.perimeter());
+    }
+  });
+    console.log("this will be displayed after 2 sec.");
 }
 solverect(2,5);
 solverect(4,5);
